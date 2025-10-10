@@ -227,6 +227,7 @@ class MainWindow(QWidget):
             self.grid_layout.addWidget(w, row, col)
 
         self.lock = threading.Lock()
+
         self.thread = threading.Thread(target=first_fit, args=(self.lock,), daemon=True)
         self.thread.start()
 
